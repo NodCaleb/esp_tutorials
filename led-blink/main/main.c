@@ -4,6 +4,7 @@
 #include "driver/gpio.h"
 
 #define LED_PIN 13
+#define BLINK_TIME 2
 
 void app_main(void)
 {
@@ -16,6 +17,6 @@ void app_main(void)
     {
         ON = !ON;
         gpio_set_level(LED_PIN, ON);
-        vTaskDelay(1000/ portTICK_PERIOD_MS);
+        vTaskDelay(BLINK_TIME * 1000 / portTICK_PERIOD_MS);
     }
 }
